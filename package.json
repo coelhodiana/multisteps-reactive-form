@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "jest",
+    "test": "jest --coverage",
     "tdd": "npm run test --watch-all",
     "e2e": "ng e2e",
     "cypress:open": "cypress open --config-file=cypress.config.ts",

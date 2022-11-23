@@ -1,0 +1,10 @@
+<h2>Informações do pagamento</h2>
+
+<form [formGroup]="form">
+  <input type="text" formControlName="type" />
+
+  <div>
+    <button [routerLink]="['../user']">voltar</button>
+    <button [disabled]="container.form.invalid">avançar</button>
+  </div>
+</form>

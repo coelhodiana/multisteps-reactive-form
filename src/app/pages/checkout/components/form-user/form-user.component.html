@@ -1,0 +1,14 @@
+<h2>Informações do usuário</h2>
+
+<form [formGroup]="form">
+  <label for="nome">Nome</label>
+  <input type="text" formControlName="name" placeholder="Nome" />
+
+  <label for="nome">Nome</label>
+  <input type="email" formControlName="email" placeholder="E-mail" />
+
+  <div>
+    <button>limpar formulário</button>
+    <button [routerLink]="['../payment']" [disabled]="form.invalid">avançar</button>
+  </div>
+</form>
