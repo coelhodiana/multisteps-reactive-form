@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CheckoutComponent } from './../../checkout.component';
-import { CheckoutModule } from './../../checkout.module';
 import { FormUserComponent } from './form-user.component';
 import { FormUserModule } from './form-user.module';
 
@@ -13,7 +12,7 @@ describe('FormUserComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FormUserComponent, CheckoutComponent, ],
-      imports: [RouterTestingModule, FormUserModule, CheckoutModule],
+      imports: [RouterTestingModule, FormUserModule],
       providers: [CheckoutComponent]
     })
     .compileComponents();
