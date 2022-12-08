@@ -1,10 +1,38 @@
 <h2>Informações do pagamento</h2>
 
-<form [formGroup]="form">
-  <input type="text" formControlName="type" />
+<form [formGroup]="form" class="form">
+  <div class="form__input">
+    <label for="">Tipo:</label>
+    <input type="text" formControlName="type" />
+  </div>
+
+  <div class="form__input">
+    <label for="">Tipo de envio:</label>
+    <input type="text" formControlName="shippingMethod" />
+  </div>
 
   <div>
+    <input type="checkbox" formControlName="hasBillingAdress" (click)="addAdress()"/>
+    <label for="">Usar o endereço pessoal:</label>
+  </div>
+
+  <div class="form__input">
+    <label for="">Endereço de cobrança:</label>
+    <input type="text" formControlName="billingAdress" />
+  </div>
+
+  <div class="form__input">
+    <label for="">Cupom:</label>
+    <input type="text" formControlName="coupon" />
+  </div>
+
+  <div>
+    <input type="checkbox" formControlName="terms" />
+    <label for="">Aceitar termos e políticas</label>
+  </div>
+
+  <div class="form__footer">
     <button [routerLink]="['../user']">voltar</button>
-    <button [disabled]="container.form.invalid">avançar</button>
+    <button [disabled]="container.form.invalid" (click)="send()">enviar</button>
   </div>
 </form>

@@ -2,12 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheckoutComponent } from './checkout.component';
 import { CheckoutModule } from './checkout.module';
-import { Checkout } from './interfaces/checkout';
-
-const formMock: Checkout = {
-  user: { name: 'diana', email: 'di@mail.com' },
-  payment: { type: 'pix' },
-};
 
 describe('CheckoutComponent', () => {
   let component: CheckoutComponent;
@@ -21,7 +15,6 @@ describe('CheckoutComponent', () => {
 
     fixture = TestBed.createComponent(CheckoutComponent);
     component = fixture.componentInstance;
-    component.form.patchValue(formMock);
     fixture.detectChanges();
   });
 
@@ -31,5 +24,6 @@ describe('CheckoutComponent', () => {
 
   it('Dado o formulário, quando for iniciado, então deve obter os valores padrão', () => {
     expect(component.form.value).toEqual(formMock);
+    expect(component.form.invalid).toBeTruthy();
   });
 });

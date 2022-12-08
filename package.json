@@ -11,8 +11,7 @@
     "e2e": "ng e2e",
     "cypress:open": "cypress open --config-file=cypress.config.ts",
     "cypress:run": "cypress run",
-    "lint": "ng lint",
-    "prepare": "husky install"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

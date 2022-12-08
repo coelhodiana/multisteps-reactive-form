@@ -1,14 +1,72 @@
-<h2>Informações do usuário</h2>
+<h3>Informações do usuário</h3>
 
-<form [formGroup]="form">
-  <label for="nome">Nome</label>
-  <input type="text" formControlName="name" placeholder="Nome" />
+<form [formGroup]="form" class="form">
+  <div class="form__input">
+    <label for="nome">Nome</label>
+    <input type="text" formControlName="name" placeholder="Nome" />
+  </div>
 
-  <label for="nome">Nome</label>
-  <input type="email" formControlName="email" placeholder="E-mail" />
+  <div class="form__input">
+    <label for="nome">E-mail</label>
+    <input type="email" formControlName="email" placeholder="E-mail" />
+  </div>
 
-  <div>
-    <button>limpar formulário</button>
-    <button [routerLink]="['../payment']" [disabled]="form.invalid">avançar</button>
+  <div class="form__input">
+    <label for="nome">Telefone</label>
+    <input type="phone" formControlName="phone" placeholder="Telefone" />
+  </div>
+
+  <h3>Endereço pessoal</h3>
+  <ng-container formGroupName="adress">
+    <div class="form__input">
+      <label for="nome">Nome do endereço</label>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Nome do endereço"
+      />
+    </div>
+
+    <div class="form__input">
+      <label for="nome">CEP</label>
+      <input type="text" formControlName="zipcode" placeholder="CEP" />
+    </div>
+
+    <div class="form__input">
+      <label for="nome">Rua</label>
+      <input
+        type="text"
+        formControlName="street"
+        placeholder="Rua, Logradouro..."
+      />
+    </div>
+
+    <div class="form__input">
+      <label for="nome">Complemento</label>
+      <input
+        type="text"
+        formControlName="complements"
+        placeholder="complementos"
+      />
+    </div>
+
+    <div class="form__input">
+      <label for="nome">Estado</label>
+      <input type="text" formControlName="state" placeholder="Estado" />
+    </div>
+
+    <div class="form__input">
+      <label for="nome">Cidade</label>
+      <input type="text" formControlName="city" placeholder="Cidade" />
+    </div>
+  </ng-container>
+
+  <span>{{ form.value | json }}</span>
+
+  <div class="form__footer">
+    <button (click)="reset()">limpar formulário</button>
+    <button [routerLink]="['../payment']" [disabled]="form.invalid">
+      avançar
+    </button>
   </div>
 </form>

@@ -1,0 +1,27 @@
+<h1>Upload de arquivos</h1>
+
+<input
+  type="file"
+  multiple
+  class="file-input"
+  (change)="selectFile($event)"
+  #FileUpload
+/>
+
+<button (click)="FileUpload.click()">upload</button>
+
+<form [formGroup]="form">
+  <div formArrayName="files">
+    <div *ngFor="let file of files.controls; let i = index">
+      <div [formGroupName]="i">
+        <p>{{ file.get("name")!.value }}</p>
+        <input type="text" formControlName="name" />
+        <input type="text" formControlName="description" />
+        <label *ngIf="files.get('{{i}}')?.get('name')?.errors?.['invalidFileType']">Tipo do arquivo inválido</label>
+      </div>
+      <button (click)="removeFile(i)">remove</button>
+    </div>
+  </div>
+</form>
+
+<p>{{ form.value | json }}</p>
